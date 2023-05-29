@@ -40,7 +40,7 @@ return new class extends Migration
             $table->foreign('id_mere')->references('id_mere')->on('mere');
             $table->foreign('id_sexe')->references('id_sexe')->on('sexe');
             $table->foreign('id_profession')->references('id_profession')->on('profession');
-            $table->foreign(['id_pays', 'lib_pays'])->references(['id_pays', 'lib_pays'])->on('pays');
+           
         });
     }
 

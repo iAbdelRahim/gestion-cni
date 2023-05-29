@@ -12,8 +12,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pays', function (Blueprint $table) {
-            $table->string('id_pays', 255);
-            $table->string('lib_pays', 255);
+            $table->string('id_pays');
+            $table->string('lib_pays');
             $table->primary(['id_pays', 'lib_pays']); // Ajoute une clé primaire sur les deux colonnes
             $table->timestamps();
         });
