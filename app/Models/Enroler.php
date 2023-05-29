@@ -18,7 +18,7 @@ class Enroler extends Model
         'ID_PERE' => 'integer',
         'ID_MERE' => 'integer',
         'ID_SEXE' => 'string',
-        'ID_PROFFESSION' => 'integer',
+        'ID_profession' => 'integer',
         'ID_PAYS' => 'string',
         'LIB_PAYS' => 'string',
         'NOM' => 'string',
@@ -55,7 +55,7 @@ class Enroler extends Model
 
     public function profession()
     {
-        return $this->belongsTo(Profession::class, 'ID_PROFFESSION');
+        return $this->belongsTo(Profession::class, 'ID_profession');
     }
 
     public function pays()

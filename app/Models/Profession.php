@@ -7,29 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profession extends Model
 {
-    protected $table = 'PROFFESSION';
-    protected $primaryKey = 'ID_PROFFESSION';
+    protected $table = 'profession';
+    protected $primaryKey = 'ID_profession';
     public $timestamps = false;
 
     protected $guarded = [];
 
     protected $casts = [
-        'ID_PROFFESSION' => 'integer',
+        'ID_profession' => 'integer',
         'LIB_PROFESSION' => 'string',
     ];
 
     public function enrolers()
     {
-        return $this->hasMany(Enroler::class, 'ID_PROFFESSION');
+        return $this->hasMany(Enroler::class, 'ID_profession');
     }
 
     public function meres()
     {
-        return $this->hasMany(Mere::class, 'ID_PROFFESSION');
+        return $this->hasMany(Mere::class, 'ID_profession');
     }
 
     public function peres()
     {
-        return $this->hasMany(Pere::class, 'ID_PROFFESSION');
+        return $this->hasMany(Pere::class, 'ID_profession');
     }
 }

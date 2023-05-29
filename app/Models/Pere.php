@@ -15,7 +15,7 @@ class Pere extends Model
 
     protected $casts = [
         'ID_PERE' => 'integer',
-        'ID_PROFFESSION' => 'integer',
+        'ID_profession' => 'integer',
         'NOM_PERE' => 'string',
         'PRENOM_PERE' => 'string',
         'DATE_NAISSANCE_PERE' => 'date',
@@ -23,7 +23,7 @@ class Pere extends Model
 
     public function profession()
     {
-        return $this->belongsTo(Profession::class, 'ID_PROFFESSION');
+        return $this->belongsTo(Profession::class, 'ID_profession');
     }
 
     public function enrolers()
