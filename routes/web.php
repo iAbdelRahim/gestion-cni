@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/landing', [LandingPageController::class, 'landing'])->name('landing');
+
+Route::get('/accueil', [AccueilController::class, 'accueil'])->name('accueil');
+
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+
+Route::get('/register', [RegisterController::class, 'register'])->name('register');
