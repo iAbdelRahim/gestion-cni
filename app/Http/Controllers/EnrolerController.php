@@ -11,7 +11,7 @@ class EnrolerController extends Controller
      */
     public function index()
     {
-        //
+        return view("");
     }
 
     /**
@@ -27,7 +27,13 @@ class EnrolerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $enrolers= new Enroler();
+        $enrolers->nom= $request->nom;
+        $enrolers->prenom= $request->prenom;
+        $enrolers->prenom_mere= $request->prenom_mere;
+        $enrolers->date_naissance_mere= $request->date_naissance_mere;
+
+        $enrolers->save();
     }
 
     /**
