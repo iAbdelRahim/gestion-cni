@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enroler;
 use Illuminate\Http\Request;
 
 class EnrolerController extends Controller
@@ -41,24 +42,24 @@ class EnrolerController extends Controller
 
 
         if($request->hasFile('lien_photo')) {
-            $filename1 = $request->getSchemeAndHttpHost() . '/img' . time() . '.' . $request->img->extension();  
+            $filename1 = $request->getSchemeAndHttpHost() . '/img' . time() . '.' . $request->img->extension();
             $request->img->moov(public_path('/img'), $filename1);
-          
+
          }
 
          if($request->hasFile('lien_empreinte')) {
-            $filename2 = $request->getSchemeAndHttpHost() . '/img' . time() . '.' . $request->img->extension();  
+            $filename2 = $request->getSchemeAndHttpHost() . '/img' . time() . '.' . $request->img->extension();
             $request->img->moov(public_path('/img'), $filename2);
-          
+
          }
 
          if($request->hasFile('lien_signature')) {
-            $filename3 = $request->getSchemeAndHttpHost() . '/img' . time() . '.' . $request->img->extension();  
+            $filename3 = $request->getSchemeAndHttpHost() . '/img' . time() . '.' . $request->img->extension();
             $request->img->moov(public_path('/img'), $filename3);
-          
+
          }
 
-         
+
          $enrolers->lien_photo= $filename1;
          $enrolers->lien_empreinte= $filename2;
          $enrolers->lien_signature= $filename3;
@@ -74,7 +75,7 @@ class EnrolerController extends Controller
         $enrolers->date_expiration= $request->date_expiration;
         $enrolers->date_enrolement= $request->date_enrolement;
         $enrolers->date_naissance= $request->date_naissance;
-       
+
 
 
 

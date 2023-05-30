@@ -12,7 +12,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
-    <title>Enrolement !</title>
+    <title>Nouveau pays</title>
     <style>
         .container{
             padding-top: 5%;
@@ -76,112 +76,6 @@
                             <input type="text" name="mere" id="mere">
                         </div>
                     </div>
-                </section>
-
-
-                {{-- section 2 --}}
-                <section>
-                    <h3 class="flow-text center-align">
-                        Seconde étape :
-                    </h3>
-                    <div class="row">
-                        <div class="col s6">
-                            <label for="nom">Nom:</label>
-                            <input type="text" name="nom" id="nom">
-                        </div>
-
-                        <div class="col s6">
-                            <label for="prenom">Prenom:</label>
-                            <input type="text" name="prenom" id="prenom">
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col s4">
-                            <label for="sexe">Sexe:</label>
-                            <input type="text" name="sece" id="sece">
-                        </div>
-
-                        <div class="col s4">
-                            <label for="profession">Profession:</label>
-                            <input type="text" name="profession" id="profession">
-                        </div>
-
-                        <div class="col s4">
-                            <label for="nationalite">Nationalite</label>
-                            <input type="text" name="nationalite" id="nationalite">
-                        </div>
-                    </div>
-
-
-                    {{-- <div>
-                        <label for="lib_pays">Libelle Pays:</label>
-                        <input type="text" name="lib_pays" id="lib_pays">
-                    </div> --}}
-
-                    <div class="row">
-                        <div class="col s4">
-                            <label for="date_naissance">Date Naissance:</label>
-                            <input type="date" name="date_naissance" id="date_naissance">
-                        </div>
-
-                        <div class="col s4">
-                            <label for="heure_naissance">Heure Naissance:</label>
-                            <input type="time" name="heure_naissance" id="heure_naissance">
-                        </div>
-
-                        <div class="col s4">
-                            <label for="lieu_naissance">Lieu Naissance:</label>
-                            <input type="text" name="lieu_naissance" id="lieu_naissance">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s4">
-                            <label for="taille">Taille:</label>
-                            <input type="number" name="taille" id="taille">
-                        </div>
-                    </div>
-                </section>
-
-
-                {{-- section 3 --}}
-                <section>
-                    <h3 class="flow-text center-align">
-                        Dernière étape :
-                    </h3>
-
-                    {{-- <div>
-                        <label for="nni">NNI:</label>
-                        <input type="text" name="nni" id="nni">
-                    </div> --}}
-
-                    <div class="row">
-                        <div class="col s6">
-                            <label for="lien_photo">Lien Photo:</label>
-                            <input type="text" name="lien_photo" id="lien_photo">
-                        </div>
-
-                        <div class="col s6">
-                            <label for="lien_empreinte">Lien Empreinte:</label>
-                            <input type="text" name="lien_empreinte" id="lien_empreinte">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col s6">
-                            <label for="lien_signature">Lien Signature:</label>
-                            <input type="text" name="lien_signature" id="lien_signature">
-                        </div>
-
-                        <div class="col s6">
-                            <label for="visa">Visa:</label>
-                            <input type="text" name="visa" id="visa">
-                        </div>
-                    </div>
-                    <button class="btn waves-effect waves-light teal-accent center-align" type="submit" name="action">Soumettre
-                        {{-- <i class="material-icons right">send</i> --}}
-                      </button>
                 </section>
             </form>
         </div>
