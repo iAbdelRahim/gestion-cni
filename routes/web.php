@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\ConnectionController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;

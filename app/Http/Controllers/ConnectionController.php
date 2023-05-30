@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use  App\Models\User;
+Use Illuminate\Support\Facades\Hash;
 
 class ConnectionController extends Controller
 {
@@ -35,12 +38,8 @@ class ConnectionController extends Controller
         // verifie s'il a pu se connecter
 
         if(Auth::attempt($request->only('email', 'password'))){
-            if(auth()->user()->role ==='admin' ){
-                return redirect('TimetableAdmin');
-            }
-            else{
-                return redirect('');
-            }
+          
+                return redirect('landing');
 
         }
 
