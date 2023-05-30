@@ -21,6 +21,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::controller(ConnectionController::class)->group(function () {
+    Route::get('/login', 'index');
+    Route::get('/users/{id}', 'show');
+    Route::post('/connexion.store', 'store');
+});
+
+
 Route::get('/landing', [LandingPageController::class, 'landing'])->name('landing');
 
 Route::get('/accueil', [AccueilController::class, 'accueil'])->name('accueil');
