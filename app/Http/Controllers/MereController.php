@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mere;
 use Illuminate\Http\Request;
 
 class MereController extends Controller

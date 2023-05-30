@@ -1,10 +1,18 @@
 <?php
 
+<<<<<<< HEAD
 use App\Http\Controllers\ConnectionController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+=======
+>>>>>>> 717496a83495207cc118502770cdc7a8082bb518
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ConnectionController;
+use App\Http\Controllers\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +43,6 @@ Route::get('/landing', [LandingPageController::class, 'landing'])->name('landing
 
 Route::get('/accueil', [AccueilController::class, 'accueil'])->name('accueil');
 
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+// Route::get('/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/register', [RegisterController::class, 'register'])->name('register');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pere;
 use Illuminate\Http\Request;
 
 class PereController extends Controller
@@ -19,7 +20,7 @@ class PereController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
