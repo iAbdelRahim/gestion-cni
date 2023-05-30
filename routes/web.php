@@ -25,8 +25,10 @@ Route::get('/', function () {
 Route::controller(ConnectionController::class)->group(function () {
     Route::get('/login', 'index');
     Route::get('/users/{id}', 'show');
-    Route::post('/connexion.store', 'store');
+
 });
+
+Route::post('/connexion/store',   [ConnectionController::class, 'store']);
 
 
 Route::get('/landing', [LandingPageController::class, 'landing'])->name('landing');

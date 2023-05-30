@@ -53,12 +53,33 @@
             <h5 class="teal-text">Connectez vous avant d'entrer !</h5>
             <div class="section"></div>
 
+            @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<!-- Afficher un message d'erreur lors d'une tentative de connexion invalide -->
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
             <div class="container">
                 <div class="z-depth-1 grey lighten-4 row"
                     style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
-                    <form class="col s12" method="post"action="{{ route('connexion.store) }}">
-                        @csrf
+                    <form class="col s12" method="post"action="/connexion/store">
+                    @csrf
+
+                    <div style="color: #fdb61e;">
+                       {!! Session::has('msg') ? Session::get("msg") : '' !!}
+                       </div>
                         <div class='row'>
                             <div class='col s12'>
                             </div>
@@ -73,7 +94,7 @@
 
                         <div class='row'>
                             <div class='input-field col s12'>
-                                <input class='validate' type='password' name='mdp' id='password' />
+                                <input class='validate' type='password' name='password' id='password' />
                                 <label for='password'>Mot de passe</label>
                             </div>
                         </div>

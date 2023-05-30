@@ -30,28 +30,27 @@ class ConnectionController extends Controller
      */
     public function store(Request $request)
         {
-        //    regle de validation 
-        $donnee=$request->validate([
-            'email'=> 'required|email',
-            'password' => 'required',
-        ]);
-        // verifie s'il a pu se connecter
 
-        if(Auth::attempt($request->only('email', 'password'))){
-          
-                return redirect('landing');
+       
+            $credentials = $request->validate([
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
+    
+            if (Auth::attempt($credentials)) {
+                // Authentification réussie
+                return redirect()->intended('/accueil');
+            } else {
+                // Authentification échouée
+                return redirect()->route('login')
+                    ->with('error', 'Adresse email ou mot de passe incorrect.');
+            }
+    
+    
 
-        }
-
-        // envoi une erreur au cas ou la connexion n'a pas reuissie
-        else{
-            // message d'erreur
-            session()->flash('msg', 'erreur est survenue verifiez vos données.');
-            return redirect()->back();
-
-        }
+   
+        
     }
-
     /**
      * Display the specified resource.
      */
