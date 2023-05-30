@@ -12,7 +12,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
-    <title>Nouveau pays</title>
+    <title>Nouvelle maman</title>
     <style>
         .container {
             padding-top: 5%;
@@ -56,24 +56,35 @@
                 <section>
                     <div class="row ">
                         <div class="col s12 ">
-                            <div class="card medium" style="height: 50em">
+                            <div class="card medium" style="height: 60em">
                                 <div class="card-image">
-                                    <img src="https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                    <img src="https://images.pexels.com/photos/1586257/pexels-photo-1586257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                         alt="Card Image">
-                                    <span class="card-title">Nouveau pays pris en charge</span>
+                                    <span class="card-title">Ajout d'une nouvelle mere de famille</span>
                                 </div>
                                 <div class="card-content">
                                     <div class="row">
                                         <div class="col s12">
-                                            <label for="id_pays">Abréviation du pays</label>
-                                            <input type="text" name="id_pays" id="id_pays">
+                                            <label for="profession">profession :</label>
+                                            <input type="text" name="profession" id="profession">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <label for="nom">Nom de famille : </label>
+                                            <input type="text" name="nom" id="nom">
+                                        </div>
+                                        <div class="col s6">
+                                            <label for="prenom">Prénom : </label>
+                                            <input type="text" name="prenom" id="prenom">
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col s12">
-                                            <label for="lib_pays">Dénomination complète du pays</label>
-                                            <input type="text" name="lib_pays" id="lib_pays">
+                                            <label for="date_naissace">Date de naissance </label>
+                                            <input type="date" name="date_naissace" id="date_naissace">
                                         </div>
                                     </div>
 
