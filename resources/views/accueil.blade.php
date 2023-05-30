@@ -14,13 +14,9 @@
 
     <title>Accueil !</title>
     <style>
-        .carousel-item {
-            height: 100rem;
-        }
 
         .container {
             width: 70%;
-
         }
     </style>
 </head>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pere;
 use Illuminate\Http\Request;
 
+
 class PereController extends Controller
 {
     /**
@@ -35,6 +36,7 @@ class PereController extends Controller
         $peres->date_naissance_pere= $request->date_naissance_pere;
 
         $peres->save();
+        
     }
 
     /**

@@ -51,7 +51,7 @@
 
     <section>
         <div class="container">
-            <form class="col s12" action="" method="POST">
+            <form class="col s12" action="{{ url('pere.store') }}" method="POST">
                 @csrf
                 <section>
                     <div class="row ">
@@ -63,28 +63,39 @@
                                     <span class="card-title">Ajout d'un nouveau père de famille</span>
                                 </div>
                                 <div class="card-content">
-                                    <div class="row">
+                                    {{-- <div class="row">
                                         <div class="col s12">
                                             <label for="profession">profession :</label>
-                                            <input type="text" name="profession" id="profession">
+                                            <input type="text" name="id_profession" id="profession">
                                         </div>
-                                    </div>
+                                    </div> --}}
 
+                                    <div class="input-field col s12">
+
+
+                                        <select name="id_profession" id="id_profession">
+                                            @foreach ($professions as $profession )
+                                            <option value="{{ $profession->id_profession}}">{{ $profession->lib_profession }}</option>
+                                            @endforeach
+
+                                        </select>
+                                        <label>professions</label>
+                                      </div>
                                     <div class="row">
                                         <div class="col s6">
                                             <label for="nom">Nom de famille : </label>
-                                            <input type="text" name="nom" id="nom">
+                                            <input type="text" name="nom_pere" id="nom">
                                         </div>
                                         <div class="col s6">
                                             <label for="prenom">Prénom : </label>
-                                            <input type="text" name="prenom" id="prenom">
+                                            <input type="text" name="prenom_pere" id="prenom">
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col s12">
                                             <label for="date_naissace">Date de naissance </label>
-                                            <input type="date" name="date_naissace" id="date_naissace">
+                                            <input type="date" name="date_naissance_pere" id="date_naissace">
                                         </div>
                                     </div>
 
@@ -153,6 +164,7 @@
                 indicators: true,
                 duration: 100,
             });
+            $('select').formSelect();
 
         });
     </script>
