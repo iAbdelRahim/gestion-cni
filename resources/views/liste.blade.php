@@ -12,18 +12,22 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
-    <title>Nouveau pays</title>
+    <title>Liste des enrolés</title>
     <style>
-        .container {
-            padding-top: 5%;
-            padding-bottom: 5%;
 
+        /* .container {
+            width: 70%;
+
+        } */
+
+        thead{
+            background-color: teal;
+        }
+        th{
+            color: white;
         }
 
-        button {
-            position: relative;
-            left: 40%;
-        }
+
     </style>
 </head>
 
@@ -51,48 +55,61 @@
 
     <section>
         <div class="container">
-            <form class="col s12" action="" method="POST">
-                @csrf
-                <section>
-                    <div class="row ">
-                        <div class="col s12 ">
-                            <div class="card medium" style="height: 50em">
-                                <div class="card-image">
-                                    <img src="https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                        alt="Card Image">
-                                    <span class="card-title">Nouveau pays pris en charge</span>
-                                </div>
-                                <div class="card-content">
-                                    <div class="row">
-                                        <div class="col s12">
-                                            <label for="id_pays">Abréviation du pays</label>
-                                            <input type="text" name="id_pays" id="id_pays">
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col s12">
-                                            <label for="lib_pays">Dénomination complète du pays</label>
-                                            <input type="text" name="lib_pays" id="lib_pays">
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <button class="btn waves-effect waves-light teal-accent center-align"
-                                            type="submit" name="action">Ajouter
-                                            {{-- <i class="material-icons right">send</i> --}}
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </form>
+            <h3 class="flow-text center-allign">
+                Tableau récapitulatif de tous les enrolements effectués
+            </h3>
         </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Enrolement</th>
+                        <th>Nom du Pere</th>
+                        <th>Nom de la Mere</th>
+                        <th>Sexe</th>
+                        <th>Profession</th>
+                        <th>Pays</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Date Naissance</th>
+                        <th>Heure Naissance</th>
+                        <th>Lieu Naissance</th>
+                        <th>NNI</th>
+                        <th>Taille</th>
+                        <th>Visa</th>
+                        <th>Signataire</th>
+                        <th>Date Emission</th>
+                        <th>Date Expiration</th>
+                        <th>Date Enrolement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{-- @foreach ($enrolers as $enroler)
+                        <tr>
+                            <td>{{ $enroler->id_enrolement }}</td>
+                            <td>{{ $enroler->id_pere }}</td>
+                            <td>{{ $enroler->id_mere }}</td>
+                            <td>{{ $enroler->id_sexe }}</td>
+                            <td>{{ $enroler->id_profession }}</td>
+                            <td>{{ $enroler->lib_pays }}</td>
+                            <td>{{ $enroler->nom }}</td>
+                            <td>{{ $enroler->prenom }}</td>
+                            <td>{{ $enroler->date_naissance }}</td>
+                            <td>{{ $enroler->heure_naissance }}</td>
+                            <td>{{ $enroler->lieu_naissance }}</td>
+                            <td>{{ $enroler->nni }}</td>
+                            <td>{{ $enroler->taille }}</td>
+                            <td>{{ $enroler->visa }}</td>
+                            <td>{{ $enroler->signataire }}</td>
+                            <td>{{ $enroler->date_emission }}</td>
+                            <td>{{ $enroler->date_expiration }}</td>
+                            <td>{{ $enroler->date_enrolement }}</td>
+                        </tr>
+                    @endforeach --}}
+                </tbody>
+            </table>
 
+        </div>
     </section>
 
     <footer class="page-footer teal">

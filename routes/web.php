@@ -10,9 +10,19 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\CniScreenController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ConnectionController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\fatherController;
+use App\Http\Controllers\motherController;
+
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\listeEnroleController;
+use App\Http\Controllers\PereController;
+use App\Http\Controllers\MereController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +50,31 @@ Route::post('/connexion/store',   [ConnectionController::class, 'store']);
 
 
 Route::get('/landing', [LandingPageController::class, 'landing'])->name('landing');
+Route::get('/register', [RegisterController::class, 'register'])->name('register');
+
+Route::post('/register.store', [RegisterController::class, 'store'])->name('register.store');
+
+
+
+
+
 
 Route::get('/accueil', [AccueilController::class, 'accueil'])->name('accueil');
 
 // Route::get('/login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/pere.store', [PereController::class, 'store'])->name('pere.store');
+Route::post('/mere.store', [MereController::class, 'store'])->name('mere.store');
+
+
+Route::get('/country', [CountryController::class, 'country'])->name('country');
+
+Route::get('/job', [JobController::class, 'job'])->name('job');
+
+Route::get('/pere', [fatherController::class, 'father'])->name('father');
+
+Route::get('mere', [motherController::class, 'mother'])->name('mother');
+
+Route::get('liste', [listeEnroleController::class, 'liste'])->name('liste');
+
+Route::get('cni', [CniScreenController::class, 'cni'])->name('cni');

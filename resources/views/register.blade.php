@@ -14,12 +14,13 @@
 
     <title>Enrolement !</title>
     <style>
-        .container{
+        .container {
             padding-top: 5%;
             padding-bottom: 5%;
 
         }
-        button{
+
+        button {
             position: relative;
             left: 45%;
         }
@@ -50,7 +51,7 @@
 
     <section>
         <div class="container">
-            <form class="col s12" action="" method="POST">
+            <form class="col s12" action="{{ url('register.store') }}" method="POST"  enctype="multipart/form-data">
                 @csrf
                 {{--
                 <div>
@@ -64,19 +65,32 @@
                         Première étape :
                     </h3>
                     <div class="row">
-                        <div class="col s12">
-                            <label for="pere">Nom et prenoms du pere</label>
-                            <input type="text" name="pere" id="pere">
+                        <div class="input-field col s6">
+
+
+                            <select name="id_pere" id="id_pere">
+                                @foreach ($peres as $pere)
+                                    <option value="{{ $pere->id_pere }}">{{ $pere->nom_pere }}</option>
+                                @endforeach
+
+                            </select>
+                            <label>nom du pere</label>
+                        </div>
+                        <div class="input-field col s6">
+
+
+                            <select name="id_mere" id="id_mere">
+                                @foreach ($meres as $mere)
+                                    <option value="{{ $mere->id_mere }}">{{ $mere->nom_mere }}</option>
+                                @endforeach
+
+                            </select>
+                            <label>nom de la mère</label>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col s12">
-                            <label for="mere">Nom et prenoms de la mere</label>
-                            <input type="text" name="mere" id="mere">
-                        </div>
-                    </div>
                 </section>
+
 
 
                 {{-- section 2 --}}
@@ -96,30 +110,47 @@
                         </div>
                     </div>
 
-
                     <div class="row">
-                        <div class="col s4">
-                            <label for="sexe">Sexe:</label>
-                            <input type="text" name="sece" id="sece">
+                        <div class="input-field col s4">
+
+
+                            <select name="id_profession" id="id_profession">
+                                @foreach ($professions as $profession)
+                                    <option value="{{ $profession->id_profession }}">{{ $profession->lib_profession }}
+                                    </option>
+                                @endforeach
+
+                            </select>
+                            <label>Nationalité</label>
+                        </div>
+                        <div class="input-field col s4">
+
+
+                            <select name="id_sexe" id="id_sexe">
+                                @foreach ($sexe as $sexe)
+                                    <option value="{{ $sexe->id_sexe }}">{{ $sexe->libelle_sexe }}
+                                    </option>
+                                @endforeach
+
+                            </select>
+                            <label>Nationalité</label>
+                        </div>
+                        <div class="input-field col s4">
+
+
+                            <select name="id_pays" id="id_pays">
+                                @foreach ($pays as $pays)
+                                    <option value="{{ $pays->id_pays }}">{{ $pays->lib_pays }}</option>
+                                @endforeach
+
+                            </select>
+                            <label>pays</label>
                         </div>
 
-                        <div class="col s4">
-                            <label for="profession">Profession:</label>
-                            <input type="text" name="profession" id="profession">
-                        </div>
-
-                        <div class="col s4">
-                            <label for="nationalite">Nationalite</label>
-                            <input type="text" name="nationalite" id="nationalite">
-                        </div>
                     </div>
 
-
-                    {{-- <div>
-                        <label for="lib_pays">Libelle Pays:</label>
-                        <input type="text" name="lib_pays" id="lib_pays">
-                    </div> --}}
-
+                </section>
+                <section>
                     <div class="row">
                         <div class="col s4">
                             <label for="date_naissance">Date Naissance:</label>
@@ -143,101 +174,117 @@
                         </div>
                     </div>
                 </section>
-
-
-                {{-- section 3 --}}
                 <section>
                     <h3 class="flow-text center-align">
                         Dernière étape :
                     </h3>
-
-                    {{-- <div>
-                        <label for="nni">NNI:</label>
-                        <input type="text" name="nni" id="nni">
-                    </div> --}}
-
                     <div class="row">
-                        <div class="col s6">
-                            <label for="lien_photo">Lien Photo:</label>
-                            <input type="text" name="lien_photo" id="lien_photo">
+                        <div class="file-field input-field col s6">
+                            <div class="btn">
+                                <span>Photo</span>
+                                <input type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input name="lien_photo" class="file-path validate" id="lien_photo" type="text">
+                            </div>
                         </div>
 
-                        <div class="col s6">
-                            <label for="lien_empreinte">Lien Empreinte:</label>
-                            <input type="text" name="lien_empreinte" id="lien_empreinte">
+                        <div class="file-field input-field col s6">
+                            <div class="btn">
+                                <span>Empreinte</span>
+                                <input type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input name="lien_empreinte" class="file-path validate" id="lien_empreinte"
+                                    type="text">
+                            </div>
                         </div>
                     </div>
-
                     <div class="row">
-                        <div class="col s6">
-                            <label for="lien_signature">Lien Signature:</label>
-                            <input type="text" name="lien_signature" id="lien_signature">
+                        <div class="file-field input-field col s6">
+                            <div class="btn">
+                                <span>Signature</span>
+                                <input type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input name="lien_signature" class="file-path validate" id="lien_signature"
+                                    type="text">
+                            </div>
                         </div>
-
                         <div class="col s6">
                             <label for="visa">Visa:</label>
                             <input type="text" name="visa" id="visa">
                         </div>
+                        {{-- <div>
+                        <label for="nni">NNI:</label>
+                        <input type="text" name="nni" id="nni">
+                        </div> --}}
+
                     </div>
-                    <button class="btn waves-effect waves-light teal-accent center-align" type="submit" name="action">Soumettre
-                        {{-- <i class="material-icons right">send</i> --}}
-                      </button>
+                    <div>
+                        <button class="btn waves-effect waves-light teal-accent center-align" type="submit"
+                            name="action">Soumettre
+                            {{-- <i class="material-icons right">send</i> --}}
+                        </button>
+                    </div>
                 </section>
             </form>
         </div>
 
-    </section>
 
-    <footer class="page-footer teal">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">A propos</h5>
-                    <p class="grey-text text-lighten-4">Adipisicing aliquip sint laborum consequat nulla aute anim in
-                        minim minim deserunt.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Liens du site</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="">Lien 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="">Lien 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="">Lien 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="">Lien 4</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright teal-accent-4">
+        <footer class="page-footer teal">
             <div class="container">
-                © Made with ❤️
-                <a class="grey-text text-lighten-4 right" href="#!">Ingrid & Irvin</a>
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">A propos</h5>
+                        <p class="grey-text text-lighten-4">Adipisicing aliquip sint laborum consequat nulla aute
+                            anim in
+                            minim minim deserunt.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Liens du site</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="">Lien 1</a></li>
+                            <li><a class="grey-text text-lighten-3" href="">Lien 2</a></li>
+                            <li><a class="grey-text text-lighten-3" href="">Lien 3</a></li>
+                            <li><a class="grey-text text-lighten-3" href="">Lien 4</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script>
-        $(document).ready(function() {
+            <div class="footer-copyright teal-accent-4">
+                <div class="container">
+                    © Made with ❤️
+                    <a class="grey-text text-lighten-4 right" href="#!">Ingrid & Irvin</a>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function() {
 
-            $(".dropdown-trigger").dropdown();
-            $('.sidenav').sidenav();
-            $('.materialboxed').materialbox();
-            $('.parallax').parallax();
-            $('.tabs').tabs();
-            $('.datepicker').datepicker({
-                disableWeekends: true,
-                yearRange: 1
-            });
-            $('.tooltipped').tooltip();
-            $('.scrollspy').scrollSpy();
-            $('.carousel.carousel-slider').carousel({
-                fullWidth: true,
-                indicators: true,
-                duration: 100,
-            });
+                $(".dropdown-trigger").dropdown();
+                $('.sidenav').sidenav();
+                $('.materialboxed').materialbox();
+                $('.parallax').parallax();
+                $('.tabs').tabs();
+                $('.datepicker').datepicker({
+                    disableWeekends: true,
+                    yearRange: 1
+                });
+                $('.tooltipped').tooltip();
+                $('.scrollspy').scrollSpy();
+                $('.carousel.carousel-slider').carousel({
+                    fullWidth: true,
+                    indicators: true,
+                    duration: 100,
+                });
+                $('select').formSelect();
 
-        });
-    </script>
+
+            });
+        </script>
 </body>
 
 </html>

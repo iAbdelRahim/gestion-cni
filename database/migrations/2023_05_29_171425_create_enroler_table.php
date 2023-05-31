@@ -12,7 +12,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('enroler', function (Blueprint $table) {
-            $table->char('id_enrolement', 10)->primary();
+            $table->string('id_enrolement', 10)->primary();
             $table->integer('id_pere')->unsigned();
             $table->integer('id_mere')->unsigned();
             $table->char('id_sexe', 1);
@@ -40,7 +40,7 @@ return new class extends Migration
             $table->foreign('id_mere')->references('id_mere')->on('mere');
             $table->foreign('id_sexe')->references('id_sexe')->on('sexe');
             $table->foreign('id_profession')->references('id_profession')->on('profession');
-           
+
         });
     }
 

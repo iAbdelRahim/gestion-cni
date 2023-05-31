@@ -14,12 +14,9 @@
 
     <title>Accueil !</title>
     <style>
-        .carousel-item{
-            height: 100rem;
-        }
-        .container{
-            width: 70%;
 
+        .container {
+            width: 70%;
         }
     </style>
 </head>
@@ -49,23 +46,23 @@
     <section>
         <div class="container carousel carousel-slider center">
             <div class="carousel-item" href="#one!">
-                <img src=
-    "https://images.pexels.com/photos/8090140/pexels-photo-8090140.jpeg?auto=compress&cs=tinysrgb&w=1600">
+                <img
+                    src="https://images.pexels.com/photos/8090140/pexels-photo-8090140.jpeg?auto=compress&cs=tinysrgb&w=1600">
             </div>
 
             <div class="carousel-item" href="#two!">
-                <img src=
-    "https://images.pexels.com/photos/8090251/pexels-photo-8090251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <img
+                    src="https://images.pexels.com/photos/8090251/pexels-photo-8090251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             </div>
 
             <div class="carousel-item" href="#three!">
-                <img src=
-    "https://images.pexels.com/photos/8090294/pexels-photo-8090294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <img
+                    src="https://images.pexels.com/photos/8090294/pexels-photo-8090294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             </div>
 
             <div class="carousel-item" href="#four!">
-                <img src=
-    "https://images.pexels.com/photos/8090290/pexels-photo-8090290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <img
+                    src="https://images.pexels.com/photos/8090290/pexels-photo-8090290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             </div>
         </div>
     </section>
@@ -74,7 +71,8 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">A propos</h5>
-                    <p class="grey-text text-lighten-4">Adipisicing aliquip sint laborum consequat nulla aute anim in minim minim deserunt.</p>
+                    <p class="grey-text text-lighten-4">Adipisicing aliquip sint laborum consequat nulla aute anim in
+                        minim minim deserunt.</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Liens du site</h5>
@@ -110,13 +108,11 @@
             });
             $('.tooltipped').tooltip();
             $('.scrollspy').scrollSpy();
-            $('.carousel.carousel-slider').carousel(
-                {
-                    fullWidth:true,
-                    indicators: true,
-                    duration:100,
-                }
-            );
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true,
+                indicators: true,
+                duration: 100,
+            });
 
         });
     </script>
