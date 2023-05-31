@@ -61,11 +61,16 @@ class RegisterController extends Controller
         $chiffreAleatoire = mt_rand(1, 999999999);
         $sequence = 'id' . $chiffreAleatoire;
 
+        $chiffreAleatoirenni = mt_rand(1, 999999999);
+        $sequencenni = 'id' . $chiffreAleatoirenni;
+
         // Assigner les autres champs de l'objet $enroler ici
         $enroler->id_enrolement = $sequence ;
+        $enroler->nni = $sequencenni ;
         $enroler->id_pere = $request->id_pere;
         $enroler->id_mere = $request->id_mere;
         $enroler->prenom = $request->prenom;
+        $enroler->nom = $request->nom;
         $enroler->id_sexe = $request->id_sexe;
         $enroler->id_pays = $request->id_pays;
         $enroler->date_naissance = $request->date_naissance;
@@ -73,6 +78,17 @@ class RegisterController extends Controller
         $enroler->lieu_naissance = $request->lieu_naissance;
         $enroler->id_profession = $request->id_profession;
         $enroler->taille = $request->taille;
+        $enroler->date_emission = $request->date_emission;
+        $enroler->date_expiration = $request->date_expiration;
+        $enroler->date_enrolement = $request->date_enrolement;
+
+        $enroler->signataire= Auth()->user()->nom;
+
+//upload des photo
+        $enroler->lien_photo = $request->lien_photo;
+        $enroler->lien_signature = $request->lien_signature;
+        $enroler->lien_empreinte = $request->lien_empreinte;
+
 
         $enroler->visa = $request->visa;
 
