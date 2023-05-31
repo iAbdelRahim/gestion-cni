@@ -14,11 +14,54 @@
 
     <title>Accueil !</title>
     <style>
-        .container {
+        .card .card-content {
+            padding: 1em;
+        }
+
+        .row {
+            margin-bottom: 0.5em;
+        }
+
+        div p {
+            font-size: 0.8rem;
+        }
+
+        div .card-stacked {
+            height: 24em;
+        }
+
+        div .card-content {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .container,
+        h5 {
+            width: 70%;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        .container h6 {
+            font-size: 0.65rem;
+        }
+
+        .card {
+            height: 20%;
             width: 70%;
         }
-        .card{
-            height: 30%;
+
+        /* .card-image img{
+            height: 10%;
+        } */
+        .card-image {
+            width: 20%;
         }
     </style>
 </head>
@@ -44,15 +87,16 @@
             <li><a href="">profession</a></li>
         </ul>
     </header>
-
-    <section class="container">
-
+    <section class=" left-allign">
+        <h3>
+            Carte Nationale d'Identité
+        </h3>
     </section>
     <section class="container">
         <div class="row">
             <div class="col s12">
                 <div class="card horizontal">
-                    <div class="card-image valign-wrapper"><img height="300px"
+                    <div class="card-image valign-wrapper"><img
                             src="https://images.pexels.com/photos/228842/pexels-photo-228842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                     </div>
                     <div class="card-stacked">
@@ -79,9 +123,9 @@
                                         <h5>
                                             BEUGRE
                                         </h5>
-                                        <h7>
+                                        <h6>
                                             Nom
-                                        </h7>
+                                        </h6>
                                         </P>
                                     </div>
                                 </div>
@@ -93,32 +137,29 @@
                                         <h5>
                                             BAWA IRVIN ABDEL-RAHIM
                                         </h5>
-                                        <h7>
+                                        <h6>
                                             Prénoms
-                                        </h7>
+                                        </h6>
                                         </P>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-
                             </div>
                             <div class="row">
                                 <div class="col s3">
                                     <h5>
                                         M
                                     </h5>
-                                    <h7>
+                                    <h6>
                                         Sexe
-                                    </h7>
+                                    </h6>
                                 </div>
                                 <div class="col s3">
                                     <h5>
                                         176
                                     </h5>
-                                    <h7>
+                                    <h6>
                                         Taille (cm)
-                                    </h7>
+                                    </h6>
                                 </div>
                             </div>
                             <div class="row">
@@ -128,9 +169,9 @@
                                         <h5>
                                             COCODY (CIV)
                                         </h5>
-                                        <h7>
+                                        <h6>
                                             Lieu de Naissance
-                                        </h7>
+                                        </h6>
                                         </P>
                                     </div>
                                 </div>
