@@ -15,7 +15,7 @@
     <title>Accueil !</title>
     <style>
         .card .card-content {
-            padding: 1em;
+            padding: 0.8em;
         }
 
         .row {
@@ -27,7 +27,8 @@
         }
 
         div .card-stacked {
-            height: 24em;
+            height: 25em;
+            width: 70%;
         }
 
         div .card-content {
@@ -57,11 +58,9 @@
             width: 70%;
         }
 
-        /* .card-image img{
-            height: 10%;
-        } */
         .card-image {
-            width: 20%;
+            width: 24%;
+            padding: 10px;
         }
     </style>
 </head>
@@ -195,6 +194,87 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card horizontal">
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col s6 left-align">
+                                    <h6>Domicile :</h6>
+                                    <h5>COCODY ANGRE DJIBI</h5>
+                                </div>
+                                <div class="col s6 right-align">
+                                    <p><img src="https://i.pinimg.com/550x/f8/32/1c/f8321c65bb1b8942ded67a5bb74de569.jpg"
+                                            alt="" height="30px"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 left-align">
+                                    <h6>Proffession:</h6>
+                                    <h5>ELEVE</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 right-align">
+                                    <p>signature du titulaire :<img src="https://www.webconversion.fr/wp-content/uploads/2019/06/signature-maker.png"
+                                            alt="" height="50px" width="200px"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <h6>
+                                        père:
+                                    </h6>
+                                    <h5>
+                                        BEUGRE GBALET JULES
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <h6>
+                                        né le:
+                                    </h6>
+                                    <h5>
+                                        10/04/1965
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <h6>
+                                        mère:
+                                    </h6>
+                                    <h5>
+                                        Soro Mama
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <h6>
+                                        né le:
+                                    </h6>
+                                    <h5>
+                                        16/04/1968
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 right-align">
+                                    <h6>
+                                        Numero de série : 11223344556677889900
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
