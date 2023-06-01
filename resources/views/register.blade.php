@@ -137,19 +137,14 @@
                             <label>Nationalité</label>
                         </div>
                         <div class="input-field col s4">
-
-
                             <select name="id_pays" id="id_pays">
                                 @foreach ($pays as $pays)
                                     <option value="{{ $pays->id_pays }}">{{ $pays->lib_pays }}</option>
                                 @endforeach
-
                             </select>
                             <label>pays</label>
                         </div>
-
                     </div>
-
                 </section>
                 <section>
                     <div class="row">

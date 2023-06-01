@@ -14,11 +14,56 @@
 
     <title>Accueil !</title>
     <style>
-        .container {
+        .card{
+            margin-left: 10em;
+        }
+        .card .card-content {
+            padding: 0.8em;
+        }
+
+        .row {
+            margin-bottom: 0.5em;
+        }
+
+        div p {
+            font-size: 0.8rem;
+        }
+
+        div .card-stacked {
+            height: 25em;
             width: 70%;
         }
-        .card{
-            height: 30%;
+
+        div .card-content {
+            margin: 0;
+            padding: 0;
+            width: 90%;
+        }
+
+        .container,
+        h5 {
+            width: 70%;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        .container h6 {
+            font-size: 0.65rem;
+        }
+
+        .card {
+            height: 20%;
+            width: 70%;
+        }
+
+        .card-image {
+            width: 24%;
+            padding: 10px;
         }
     </style>
 </head>
@@ -44,15 +89,16 @@
             <li><a href="">profession</a></li>
         </ul>
     </header>
-
-    <section class="container">
-
+    <section class=" left-allign">
+        <h3>
+            Carte Nationale d'Identité
+        </h3>
     </section>
     <section class="container">
         <div class="row">
             <div class="col s12">
                 <div class="card horizontal">
-                    <div class="card-image valign-wrapper"><img height="300px"
+                    <div class="card-image valign-wrapper"><img
                             src="https://images.pexels.com/photos/228842/pexels-photo-228842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                     </div>
                     <div class="card-stacked">
@@ -79,9 +125,9 @@
                                         <h5>
                                             BEUGRE
                                         </h5>
-                                        <h7>
+                                        <h6>
                                             Nom
-                                        </h7>
+                                        </h6>
                                         </P>
                                     </div>
                                 </div>
@@ -93,32 +139,29 @@
                                         <h5>
                                             BAWA IRVIN ABDEL-RAHIM
                                         </h5>
-                                        <h7>
+                                        <h6>
                                             Prénoms
-                                        </h7>
+                                        </h6>
                                         </P>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-
                             </div>
                             <div class="row">
                                 <div class="col s3">
                                     <h5>
                                         M
                                     </h5>
-                                    <h7>
+                                    <h6>
                                         Sexe
-                                    </h7>
+                                    </h6>
                                 </div>
                                 <div class="col s3">
                                     <h5>
                                         176
                                     </h5>
-                                    <h7>
+                                    <h6>
                                         Taille (cm)
-                                    </h7>
+                                    </h6>
                                 </div>
                             </div>
                             <div class="row">
@@ -128,9 +171,9 @@
                                         <h5>
                                             COCODY (CIV)
                                         </h5>
-                                        <h7>
+                                        <h6>
                                             Lieu de Naissance
-                                        </h7>
+                                        </h6>
                                         </P>
                                     </div>
                                 </div>
@@ -156,6 +199,88 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card horizontal">
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col s6 left-align">
+                                <h6>Domicile :</h6>
+                                <h5>COCODY ANGRE DJIBI</h5>
+                            </div>
+                            <div class="col s6 right-align">
+                                <p><img src="https://i.pinimg.com/550x/f8/32/1c/f8321c65bb1b8942ded67a5bb74de569.jpg"
+                                        alt="" height="30px"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 left-align">
+                                <h6>Proffession:</h6>
+                                <h5>ELEVE</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 right-align">
+                                <p>signature du titulaire :<img
+                                        src="https://www.webconversion.fr/wp-content/uploads/2019/06/signature-maker.png"
+                                        alt="" height="50px" width="200px"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <h6>
+                                    père:
+                                </h6>
+                                <h5>
+                                    BEUGRE GBALET JULES
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <h6>
+                                    né le:
+                                </h6>
+                                <h5>
+                                    10/04/1965
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <h6>
+                                    mère:
+                                </h6>
+                                <h5>
+                                    Soro Mama
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <h6>
+                                    né le:
+                                </h6>
+                                <h5>
+                                    16/04/1968
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 right-align">
+                                <h6>
+                                    Numero de série : 11223344556677889900
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         </div>
     </section>
 
