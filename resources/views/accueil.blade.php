@@ -14,7 +14,6 @@
 
     <title>Accueil !</title>
     <style>
-
         .container {
             width: 70%;
         }
@@ -43,35 +42,64 @@
         </ul>
     </header>
 
-    <section>
-        <div class="container carousel carousel-slider center">
-            <div class="carousel-item" href="#one!">
-                <img
-                    src="https://images.pexels.com/photos/8090140/pexels-photo-8090140.jpeg?auto=compress&cs=tinysrgb&w=1600">
-            </div>
-
-            <div class="carousel-item" href="#two!">
-                <img
-                    src="https://images.pexels.com/photos/8090251/pexels-photo-8090251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-            </div>
-
-            <div class="carousel-item" href="#three!">
-                <img
-                    src="https://images.pexels.com/photos/8090294/pexels-photo-8090294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-            </div>
-
-            <div class="carousel-item" href="#four!">
-                <img
-                    src="https://images.pexels.com/photos/8090290/pexels-photo-8090290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h1 class="header center orange-text">Bienvenue !</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Votre nouveau compagnon de gestion des enrolements</h5>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="container">
+        <div class="section">
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+                        <h5 class="center">Enregistrez les parents, les pays et les professions</h5>
+                        {{-- <p class="light">By utilizing elements and principles of Material Design, we were able to
+                            create a framework that incorporates components and animations that provide more feedback to
+                            users. Additionally, a single underlying responsive system across all platforms
+                            allow for a more unified user experience.</p> --}}
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+                        <h5 class="center">Faites des enrolements</h5>
+                        {{-- <p class="light">We have provided detailed documentation as well as specific code examples to
+                            help new users get started. We are also always open to feedback and can answer any questions
+                            a user may have about Materialize.</p> --}}
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+                        <h5 class="center">le tout avec une interface conviviale</h5>
+                        {{-- <p class="light">We did most of the heavy lifting for you to provide a default stylings that
+                            incorporate our custom components. Additionally, we refined animations and transitions to
+                            provide a smoother experience for developers.</p> --}}
+                    </div>
+                </div>
+            </div>
+            <div class="row center">
+                <a href="" id="download-button"
+                    class="btn-large waves-effect waves-light orange">faire un enrolement</a>
+            </div>
+        </div>
+        <br><br>
+        <div class="section">
+        </div>
+    </div>
     <footer class="page-footer teal">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">A propos</h5>
-                    <p class="grey-text text-lighten-4">Adipisicing aliquip sint laborum consequat nulla aute anim in
+                    <p class="grey-text text-lighten-4">Adipisicing aliquip sint laborum consequat nulla aute anim
+                        in
                         minim minim deserunt.</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
