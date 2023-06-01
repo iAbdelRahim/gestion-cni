@@ -82,7 +82,7 @@
                         <th>Date Expiration</th>
                         <th>Date Enrolement</th>
                         <th>Supression</th>
-                        <th>modification</th>
+                        <th>afficher la carte</th>
 
 
 
@@ -92,10 +92,10 @@
                     @foreach ($enrolers as $enroler)
                         <tr>
                             <td>{{ $enroler->id_enrolement }}</td>
-                            <td>{{ $enroler->id_pere }}</td>
-                            <td>{{ $enroler->id_mere }}</td>
+                            <td>{{ $enroler->pere->nom_pere }}</td>
+                            <td>{{ $enroler->mere->nom_mere }}</td>
                             <td>{{ $enroler->id_sexe }}</td>
-                            <td>{{ $enroler->id_profession }}</td>
+                            <td>{{ $enroler->profession->lib_profession }}</td>
                             <td>{{ $enroler->lib_pays }}</td>
                             <td>{{ $enroler->nom }}</td>
                             <td>{{ $enroler->prenom }}</td>
@@ -112,7 +112,7 @@
                             <td>
                             <div>
                                 <button class="btn waves-effect waves-light teal-accent center-align" type="submit"
-                                    name="action">Supprimer
+                                    name="action" ><a href="{{ route('delectEnroler',$enroler->id_enrolement) }}" >Supprimer</a>
                                     {{-- <i class="material-icons right">send</i> --}}
                                 </button>
                             </div>
@@ -120,7 +120,7 @@
                             <td>
                             <div>
                                 <button class="btn waves-effect waves-light teal-accent center-align" type="submit"
-                                    name="action">modifier
+                                    name="action">afficher la carte
                                     {{-- <i class="material-icons right">send</i> --}}
                                 </button>
                             </div>

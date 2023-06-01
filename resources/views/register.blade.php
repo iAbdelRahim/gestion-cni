@@ -53,6 +53,7 @@
         <div class="container">
             <form class="col s12" action="{{ url('register.store') }}" method="POST"  enctype="multipart/form-data">
                 @csrf
+                @method("POST")
                 {{--
                 <div>
                     <label for="id_enrolement">ID Enrolement:</label>
@@ -182,20 +183,20 @@
                         <div class="file-field input-field col s6">
                             <div class="btn">
                                 <span>Photo</span>
-                                <input type="file">
+                                <input type="file" name="lien_photo">
                             </div>
                             <div class="file-path-wrapper">
-                                <input name="lien_photo" class="file-path validate" id="lien_photo" type="text">
+                                <input  class="file-path validate" id="lien_photo" type="text">
                             </div>
                         </div>
 
                         <div class="file-field input-field col s6">
                             <div class="btn">
                                 <span>Empreinte</span>
-                                <input type="file">
+                                <input name="lien_empreinte" type="file">
                             </div>
                             <div class="file-path-wrapper">
-                                <input name="lien_empreinte" class="file-path validate" id="lien_empreinte"
+                                <input class="file-path validate" id="lien_empreinte"
                                     type="text">
                             </div>
                         </div>
@@ -204,10 +205,10 @@
                         <div class="file-field input-field col s6">
                             <div class="btn">
                                 <span>Signature</span>
-                                <input type="file">
+                                <input name="lien_signature" type="file">
                             </div>
                             <div class="file-path-wrapper">
-                                <input name="lien_signature" class="file-path validate" id="lien_signature"
+                                <input  class="file-path validate" id="lien_signature"
                                     type="text">
                             </div>
                         </div>

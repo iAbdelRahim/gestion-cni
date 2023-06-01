@@ -48,6 +48,8 @@ Route::get('/register', [RegisterController::class, 'register'])->name('register
 Route::post('/register.store', [RegisterController::class, 'store'])->name('register.store');
 Route::get('/liste', [RegisterController::class, 'show'])->name('liste');
 
+Route::get('/Enroler/{enroler}/destroy',   [RegisterController::class, 'destroy'])->name('delectEnroler');
+
 
 
 
