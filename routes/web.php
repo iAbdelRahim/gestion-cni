@@ -49,7 +49,7 @@ Route::post('/register.store', [RegisterController::class, 'store'])->name('regi
 Route::get('/liste', [RegisterController::class, 'show'])->name('liste');
 
 Route::get('/Enroler/{enroler}/destroy',   [RegisterController::class, 'destroy'])->name('delectEnroler');
-
+Route::get('/Enroler/{enroler}/show',   [CniScreenController::class, 'showCni'])->name('showcni');
 
 
 

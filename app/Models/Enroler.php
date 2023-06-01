@@ -12,7 +12,7 @@ class Enroler extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'ID_ENROLEMENT',
+        'id_enrolement',
         'ID_PERE',
         'ID_MERE',
         'ID_SEXE',
