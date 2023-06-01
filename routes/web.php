@@ -46,6 +46,8 @@ Route::get('/landing', [LandingPageController::class, 'landing'])->name('landing
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 
 Route::post('/register.store', [RegisterController::class, 'store'])->name('register.store');
+Route::get('/liste', [RegisterController::class, 'show'])->name('liste');
+
 
 
 
@@ -68,6 +70,6 @@ Route::get('/pere', [fatherController::class, 'father'])->name('father');
 
 Route::get('mere', [motherController::class, 'mother'])->name('mother');
 
-Route::get('liste', [listeEnroleController::class, 'liste'])->name('liste');
+
 
 Route::get('cni', [CniScreenController::class, 'cni'])->name('cni');

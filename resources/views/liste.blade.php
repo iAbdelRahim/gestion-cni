@@ -81,10 +81,15 @@
                         <th>Date Emission</th>
                         <th>Date Expiration</th>
                         <th>Date Enrolement</th>
+                        <th>Supression</th>
+                        <th>modification</th>
+
+
+
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($enrolers as $enroler)
+                    @foreach ($enrolers as $enroler)
                         <tr>
                             <td>{{ $enroler->id_enrolement }}</td>
                             <td>{{ $enroler->id_pere }}</td>
@@ -104,8 +109,26 @@
                             <td>{{ $enroler->date_emission }}</td>
                             <td>{{ $enroler->date_expiration }}</td>
                             <td>{{ $enroler->date_enrolement }}</td>
+                            <td>
+                            <div>
+                                <button class="btn waves-effect waves-light teal-accent center-align" type="submit"
+                                    name="action">Supprimer
+                                    {{-- <i class="material-icons right">send</i> --}}
+                                </button>
+                            </div>
+                            </td>
+                            <td>
+                            <div>
+                                <button class="btn waves-effect waves-light teal-accent center-align" type="submit"
+                                    name="action">modifier
+                                    {{-- <i class="material-icons right">send</i> --}}
+                                </button>
+                            </div>
+                            </td>
                         </tr>
-                    @endforeach --}}
+
+         
+                    @endforeach
                 </tbody>
             </table>
 

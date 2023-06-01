@@ -176,7 +176,7 @@
                 </section>
                 <section>
                     <h3 class="flow-text center-align">
-                        Dernière étape :
+                        Troisieme étape :
                     </h3>
                     <div class="row">
                         <div class="file-field input-field col s6">
@@ -220,12 +220,33 @@
                         <input type="text" name="nni" id="nni">
                         </div> --}}
 
+
+
                     </div>
                     <div>
                         <button class="btn waves-effect waves-light teal-accent center-align" type="submit"
                             name="action">Soumettre
                             {{-- <i class="material-icons right">send</i> --}}
                         </button>
+                    </div>
+                </section>
+                <section>
+                    <h3 class="flow-text center-align">
+                        Dernière étape :
+                    </h3>
+                    <div class="row">
+                    <div class="col s4">
+                            <label for="date_emission">Date emission:</label>
+                            <input type="date" name="date_emission" id="date_emission">
+                    </div>
+                    <div class="col s4">
+                            <label for="date_expiration">Date expiration:</label>
+                            <input type="date" name="date_expiration" id="date_expiration">
+                    </div>
+                    <div class="col s4">
+                            <label for="date_enrolement">Date enrolement:</label>
+                            <input type="date" name="date_enrolement" id="date_enrolement">
+                    </div>
                     </div>
                 </section>
             </form>

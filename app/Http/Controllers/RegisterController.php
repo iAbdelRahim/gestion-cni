@@ -17,7 +17,7 @@ use App\Models\Sexe;
 class RegisterController extends Controller
 {
     //
-    public function register(): View
+    public function register()
     {
         $peres = Pere ::all();
         $meres = Mere ::all();
@@ -33,22 +33,42 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+   
         $enroler = new Enroler();
 
-        if ($request->hasFile('lien_photo')) {
-            $photo = $request->file('lien_photo');
-            $filename = time() . '.' . $photo->getClientOriginalExtension();
-            $path_des = "public/photo";
-            $photo->storeAs($path_des, $filename);
-            $enroler->lien_photo = $filename;
-        }
+        // if ($request->file('lien_photo')) {
+        //     // $photo = $request->file('lien_photo');
+        //     // $filename = time() . '.' . $photo->getClientOriginalExtension();
+        //     // $path_des = "public/photo";
+        //     // $photo->storeAs($path_des, $filename);
+            
+        //     $file = $request->file('lien_photo');
+        //     $file = $request->lien_photo;
+        //     $img = $file->move("photo/$file->getClientOriginalName()");
+     
+   
+  
+        // }
+
+
+
+        $this->validate($request, [
+            'lien_photo' => "required|file|max:2048|mimes:png,jpg",
+        ]);
+
+        $images =  time() . '.' . $request->lien_photo->getClientOriginalExtension();
+       
+   
+        $request->lien_photo->move(public_path('img'),$images );
+
+
 
         if ($request->hasFile('lien_signature')) {
             $signature = $request->file('lien_signature');
             $filename2 = time() . '.' . $signature->getClientOriginalExtension();
             $path_des = "public/photo";
             $signature->storeAs($path_des, $filename2);
-            $enroler->lien_signature = $filename2;
+     
         }
 
         if ($request->hasFile('lien_empreinte')) {
@@ -56,7 +76,7 @@ class RegisterController extends Controller
             $filename3 = time() . '.' . $empreinte->getClientOriginalExtension();
             $path_des = "public/photo";
             $empreinte->storeAs($path_des, $filename3);
-            $enroler->lien_empreinte = $filename3;
+     
         }
         $chiffreAleatoire = mt_rand(1, 999999999);
         $sequence = 'id' . $chiffreAleatoire;
@@ -82,10 +102,11 @@ class RegisterController extends Controller
         $enroler->date_expiration = $request->date_expiration;
         $enroler->date_enrolement = $request->date_enrolement;
 
-        $enroler->signataire= Auth()->user()->nom;
+        $enroler->signataire= Auth()->user()->name;
 
 //upload des photo
-        $enroler->lien_photo = $request->lien_photo;
+
+
         $enroler->lien_signature = $request->lien_signature;
         $enroler->lien_empreinte = $request->lien_empreinte;
 
@@ -100,6 +121,23 @@ class RegisterController extends Controller
     }
 
 
+
+
+
+    public function show()
+    {
+        $enrolers = Enroler::all();
+        return view('liste',compact('enrolers'));
+    }
+
+
+
+
+    public function destroy(string $id)
+    {
+        $enrolers = Enroler::find($id);
+        $enrolers->delete();
+    }
 
 
 }
