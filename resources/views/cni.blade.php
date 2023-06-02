@@ -89,6 +89,8 @@
             <li><a href="">profession</a></li>
         </ul>
     </header>
+
+
     <section class=" left-allign">
         <h3>
             Carte Nationale d'Identité
@@ -301,6 +303,15 @@
         </div>
         </div>
     </section>
+    <div>
+        <button class="btn waves-effect waves-light teal-accent center-align" type="submit"
+            name="action" ><a href="" onclick=window.print(); style="padding:120px;">Imprimer</a>
+            {{-- <i class="material-icons right">send</i> --}}
+        </button>
+    </div>
+    <br>
+    <br>
+    <br>
 
     <footer class="page-footer teal">
         <div class="container">
