@@ -4,12 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-use  App\Models\User;
-Use Illuminate\Support\Facades\Hash;
-=======
-use Illuminate\Support\Facades\Auth;
->>>>>>> 717496a83495207cc118502770cdc7a8082bb518
+use App\Models\User;
+
 
 class ConnectionController extends Controller
 {
@@ -34,47 +30,18 @@ class ConnectionController extends Controller
      */
     public function store(Request $request)
         {
-<<<<<<< HEAD
+            $credentials = $request->only('email', 'password');
+          
 
-       
-            $credentials = $request->validate([
-                'email' => 'required|email',
-                'password' => 'required',
-            ]);
-    
             if (Auth::attempt($credentials)) {
-                // Authentification réussie
-                return redirect()->intended('/accueil');
-            } else {
-                // Authentification échouée
-                return redirect()->route('login')
-                    ->with('error', 'Adresse email ou mot de passe incorrect.');
+                // L'authentification a réussi
+                return redirect('landing');
             }
     
-    
-
-   
+            // L'authentification a échoué
+            return back()->withErrors(['email' => 'Identifiants invalides.']);
         
-=======
-        //    regle de validation
-        $donnee=$request->validate([
-            'email'=> 'required|email',
-            'password' => 'required',
-        ]);
-        // verifie s'il a pu se connecter
-
-        if(Auth::attempt($request->only('email', 'password'))){
-            return redirect('landing');
-        }
-
-        // envoi une erreur au cas ou la connexion n'a pas reuissie
-        else{
-            // message d'erreur
-            session()->flash('msg', 'erreur est survenue verifiez vos données.');
-            return redirect()->back();
-
-        }
->>>>>>> 717496a83495207cc118502770cdc7a8082bb518
+    
     }
     /**
      * Display the specified resource.
@@ -106,5 +73,12 @@ class ConnectionController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect('/');
     }
 }

@@ -12,13 +12,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('enroler', function (Blueprint $table) {
-            $table->string('id_enrolement', 10)->primary();
+            $table->string('id_enrolement', 255)->primary();
             $table->integer('id_pere')->unsigned();
             $table->integer('id_mere')->unsigned();
             $table->char('id_sexe', 1);
             $table->integer('id_profession')->unsigned();
             $table->char('id_pays', 255);
-            $table->char('lib_pays', 255);
             $table->char('nom', 10);
             $table->char('prenom');
             $table->time('heure_naissance');

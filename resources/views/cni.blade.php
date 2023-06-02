@@ -113,7 +113,8 @@
                                             <b>Carte Nationale d'identité</b>
                                         </p>
                                         <p>
-                                            Immatriculation : <b>C 0126 1820 55</b>
+                                          
+                                            Immatriculation : <b>{{ $enroler->getAttributes()['id_enrolement']}}</b>
                                         </p>
                                     </div>
                                 </div>
@@ -123,10 +124,10 @@
                                     <div class="left-align">
                                         <P>
                                         <h5>
-                                            BEUGRE
+                                           Nom
                                         </h5>
                                         <h6>
-                                            Nom
+                                            {{ $enroler->nom }}
                                         </h6>
                                         </P>
                                     </div>
@@ -137,10 +138,11 @@
                                     <div class="left-align">
                                         <P>
                                         <h5>
-                                            BAWA IRVIN ABDEL-RAHIM
+                                        Prénom
                                         </h5>
                                         <h6>
-                                            Prénoms
+                                            
+                                            {{ $enroler->prenom }}
                                         </h6>
                                         </P>
                                     </div>
@@ -149,7 +151,7 @@
                             <div class="row">
                                 <div class="col s3">
                                     <h5>
-                                        M
+                                        {{ $enroler->id_sexe }}
                                     </h5>
                                     <h6>
                                         Sexe
@@ -157,7 +159,7 @@
                                 </div>
                                 <div class="col s3">
                                     <h5>
-                                        176
+                                        {{ $enroler->taille }}
                                     </h5>
                                     <h6>
                                         Taille (cm)
@@ -169,10 +171,10 @@
                                     <div class="left-align">
                                         <P>
                                         <h5>
-                                            COCODY (CIV)
+                                            {{ $enroler->lib_pays }}
                                         </h5>
                                         <h6>
-                                            Lieu de Naissance
+                                          nee le
                                         </h6>
                                         </P>
                                     </div>
@@ -181,18 +183,14 @@
                             <div class="row">
                                 <div class="col s6">
                                     <h5>
-                                        Etablie le : <b>20/06/2019</b>
+                                        {{ $enroler->date_naissance }}</b>
                                     </h5>
                                 </div>
-                                <div class="col s6">
-                                    <h5>
-                                        Valide jusqu'au : <b>19/06/2029</b>
-                                    </h5>
-                                </div>
+         
                             </div>
                             <div class="row">
                                 <div class="col s3">
-                                    A : <b>Abidjan</b>
+                                    A : <b>{{ $enroler->lieu_naissance }}</b>
                                 </div>
                             </div>
                         </div>
@@ -219,14 +217,22 @@
                         <div class="row">
                             <div class="col s12 left-align">
                                 <h6>Proffession:</h6>
-                                <h5>ELEVE</h5>
+                                <h5>{{ $enroler->profession->lib_profession }}</h5>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col s12 right-align">
-                                <p>signature du titulaire :<img
-                                        src="https://www.webconversion.fr/wp-content/uploads/2019/06/signature-maker.png"
-                                        alt="" height="50px" width="200px"></p>
+                                <p>signature du titulaire :
+                            
+                                <img src="{{ public_path('img/' . $enroler->lien_signature) }}">
+                            </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 right-align">
+                                <p>date Emission : {{ $enroler->date_emission }}
+                                </p>
                             </div>
                         </div>
                         <div class="row">
@@ -235,8 +241,17 @@
                                     père:
                                 </h6>
                                 <h5>
-                                    BEUGRE GBALET JULES
+                                {{ $enroler->pere->nom_pere }}
                                 </h5>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 right-align">
+                                <p>date Expiration :{{ $enroler->date_expiration }}
+                                </p>
+                                       
+                                </p>
                             </div>
                         </div>
                         <div class="row">
@@ -245,7 +260,7 @@
                                     né le:
                                 </h6>
                                 <h5>
-                                    10/04/1965
+                                {{ $enroler->pere->date_naissance_pere }}
                                 </h5>
                             </div>
                         </div>
@@ -255,7 +270,7 @@
                                     mère:
                                 </h6>
                                 <h5>
-                                    Soro Mama
+                                {{ $enroler->mere->nom_mere }}
                                 </h5>
                             </div>
                         </div>
@@ -265,14 +280,17 @@
                                     né le:
                                 </h6>
                                 <h5>
-                                    16/04/1968
+                                {{ $enroler->mere->date_naissance_mere }}
+                                    
                                 </h5>
                             </div>
+
+                        
                         </div>
                         <div class="row">
                             <div class="col s12 right-align">
                                 <h6>
-                                    Numero de série : 11223344556677889900
+                                {{ $enroler->nni }}
                                 </h6>
                             </div>
                         </div>

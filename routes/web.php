@@ -1,12 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-use App\Http\Controllers\ConnectionController;
-use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
-=======
->>>>>>> 717496a83495207cc118502770cdc7a8082bb518
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AccueilController;
@@ -53,6 +46,10 @@ Route::get('/landing', [LandingPageController::class, 'landing'])->name('landing
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 
 Route::post('/register.store', [RegisterController::class, 'store'])->name('register.store');
+Route::get('/liste', [RegisterController::class, 'show'])->name('liste');
+
+Route::get('/Enroler/{enroler}/destroy',   [RegisterController::class, 'destroy'])->name('delectEnroler');
+Route::get('/Enroler/{enroler}/show',   [CniScreenController::class, 'showCni'])->name('showcni');
 
 
 
@@ -75,6 +72,6 @@ Route::get('/pere', [fatherController::class, 'father'])->name('father');
 
 Route::get('mere', [motherController::class, 'mother'])->name('mother');
 
-Route::get('liste', [listeEnroleController::class, 'liste'])->name('liste');
+
 
 Route::get('cni', [CniScreenController::class, 'cni'])->name('cni');

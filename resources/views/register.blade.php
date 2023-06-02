@@ -53,6 +53,7 @@
         <div class="container">
             <form class="col s12" action="{{ url('register.store') }}" method="POST"  enctype="multipart/form-data">
                 @csrf
+                @method("POST")
                 {{--
                 <div>
                     <label for="id_enrolement">ID Enrolement:</label>
@@ -171,26 +172,26 @@
                 </section>
                 <section>
                     <h3 class="flow-text center-align">
-                        Dernière étape :
+                        Troisieme étape :
                     </h3>
                     <div class="row">
                         <div class="file-field input-field col s6">
                             <div class="btn">
                                 <span>Photo</span>
-                                <input type="file">
+                                <input type="file" name="lien_photo">
                             </div>
                             <div class="file-path-wrapper">
-                                <input name="lien_photo" class="file-path validate" id="lien_photo" type="text">
+                                <input  class="file-path validate" id="lien_photo" type="text">
                             </div>
                         </div>
 
                         <div class="file-field input-field col s6">
                             <div class="btn">
                                 <span>Empreinte</span>
-                                <input type="file">
+                                <input name="lien_empreinte" type="file">
                             </div>
                             <div class="file-path-wrapper">
-                                <input name="lien_empreinte" class="file-path validate" id="lien_empreinte"
+                                <input class="file-path validate" id="lien_empreinte"
                                     type="text">
                             </div>
                         </div>
@@ -199,10 +200,10 @@
                         <div class="file-field input-field col s6">
                             <div class="btn">
                                 <span>Signature</span>
-                                <input type="file">
+                                <input name="lien_signature" type="file">
                             </div>
                             <div class="file-path-wrapper">
-                                <input name="lien_signature" class="file-path validate" id="lien_signature"
+                                <input  class="file-path validate" id="lien_signature"
                                     type="text">
                             </div>
                         </div>
@@ -215,12 +216,33 @@
                         <input type="text" name="nni" id="nni">
                         </div> --}}
 
+
+
                     </div>
                     <div>
                         <button class="btn waves-effect waves-light teal-accent center-align" type="submit"
                             name="action">Soumettre
                             {{-- <i class="material-icons right">send</i> --}}
                         </button>
+                    </div>
+                </section>
+                <section>
+                    <h3 class="flow-text center-align">
+                        Dernière étape :
+                    </h3>
+                    <div class="row">
+                    <div class="col s4">
+                            <label for="date_emission">Date emission:</label>
+                            <input type="date" name="date_emission" id="date_emission">
+                    </div>
+                    <div class="col s4">
+                            <label for="date_expiration">Date expiration:</label>
+                            <input type="date" name="date_expiration" id="date_expiration">
+                    </div>
+                    <div class="col s4">
+                            <label for="date_enrolement">Date enrolement:</label>
+                            <input type="date" name="date_enrolement" id="date_enrolement">
+                    </div>
                     </div>
                 </section>
             </form>

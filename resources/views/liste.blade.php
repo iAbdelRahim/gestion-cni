@@ -81,16 +81,23 @@
                         <th>Date Emission</th>
                         <th>Date Expiration</th>
                         <th>Date Enrolement</th>
+                        <th>Supression</th>
+                        <th>afficher la carte</th>
+
+
+
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($enrolers as $enroler)
+          
+                    @foreach ($enrolers as $enroler)
                         <tr>
-                            <td>{{ $enroler->id_enrolement }}</td>
-                            <td>{{ $enroler->id_pere }}</td>
-                            <td>{{ $enroler->id_mere }}</td>
+                        
+                            <td>{{$enroler->getAttributes()["id_enrolement"]}}</td>
+                            <td>{{ $enroler->pere->nom_pere }}</td>
+                            <td>{{ $enroler->mere->nom_mere }}</td>
                             <td>{{ $enroler->id_sexe }}</td>
-                            <td>{{ $enroler->id_profession }}</td>
+                            <td>{{ $enroler->profession->lib_profession }}</td>
                             <td>{{ $enroler->lib_pays }}</td>
                             <td>{{ $enroler->nom }}</td>
                             <td>{{ $enroler->prenom }}</td>
@@ -104,8 +111,26 @@
                             <td>{{ $enroler->date_emission }}</td>
                             <td>{{ $enroler->date_expiration }}</td>
                             <td>{{ $enroler->date_enrolement }}</td>
+                            <td>
+                            <div>
+                                <button class="btn waves-effect waves-light teal-accent center-align" type="submit"
+                                    name="action" ><a href="{{ route('delectEnroler',$enroler->getAttributes()['id_enrolement']) }}" >Supprimer</a>
+                                    {{-- <i class="material-icons right">send</i> --}}
+                                </button>
+                            </div>
+                            </td>
+                            <td>
+                            <div>
+                                <button class="btn waves-effect waves-light teal-accent center-align" type="submit"
+                                    name="action"><a href="{{ route('showcni',$enroler->getAttributes()['id_enrolement']) }}" >afficher la carte</a>
+                                    {{-- <i class="material-icons right">send</i> --}}
+                                </button>
+                            </div>
+                            </td>
                         </tr>
-                    @endforeach --}}
+
+         
+                    @endforeach
                 </tbody>
             </table>
 

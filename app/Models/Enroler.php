@@ -8,44 +8,43 @@ use Illuminate\Database\Eloquent\Model;
 class Enroler extends Model
 {
     protected $table = 'ENROLER';
-    protected $primaryKey = 'ID_ENROLEMENT';
+    protected $primaryKey = 'id_enrolement';
     public $timestamps = false;
 
-    protected $guarded = [];
-
-    protected $casts = [
-        'ID_ENROLEMENT' => 'string',
-        'ID_PERE' => 'integer',
-        'ID_MERE' => 'integer',
-        'ID_SEXE' => 'string',
-        'ID_profession' => 'integer',
-        'ID_PAYS' => 'string',
-        'LIB_PAYS' => 'string',
-        'NOM' => 'string',
-        'PRENOM' => 'string',
-        'HEURE_NAISSANCE' => 'time',
-        'LIEU_NAISSANCE' => 'string',
-        'NNI' => 'string',
-        'TAILLE' => 'integer',
-        'LIEN_PHOTO' => 'string',
-        'LIEN_EMPREINTE' => 'string',
-        'LIEN_SIGNATURE' => 'string',
-        'VISA' => 'string',
-        'SIGNATAIRE' => 'string',
-        'DATE_EMISSION' => 'date',
-        'DATE_EXPIRATION' => 'date',
-        'DATE_ENROLEMENT' => 'date',
-        'DATE_NAISSANCE' => 'date',
+    protected $fillable = [
+        'id_enrolement',
+        'ID_PERE',
+        'ID_MERE',
+        'ID_SEXE',
+        'ID_profession',
+        'ID_PAYS',
+        'LIB_PAYS',
+        'NOM',
+        'PRENOM',
+        'HEURE_NAISSANCE',
+        'LIEU_NAISSANCE',
+        'NNI',
+        'TAILLE',
+        'LIEN_PHOTO',
+        'LIEN_EMPREINTE',
+        'LIEN_SIGNATURE',
+        'VISA',
+        'SIGNATAIRE',
+        'DATE_EMISSION',
+        'DATE_EXPIRATION',
+        'DATE_ENROLEMENT',
+        'DATE_NAISSANCE',
     ];
+    
 
     public function pere()
     {
-        return $this->belongsTo(Pere::class, 'ID_PERE');
+        return $this->belongsTo(Pere::class, 'id_pere');
     }
 
     public function mere()
     {
-        return $this->belongsTo(Mere::class, 'ID_MERE');
+        return $this->belongsTo(Mere::class, 'id_mere');
     }
 
     public function sexe()
@@ -55,7 +54,7 @@ class Enroler extends Model
 
     public function profession()
     {
-        return $this->belongsTo(Profession::class, 'ID_profession');
+        return $this->belongsTo(Profession::class, 'id_profession');
     }
 
     public function pays()
